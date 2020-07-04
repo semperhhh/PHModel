@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "mac air" => "zphui5409@sina.com" }
+  spec.author             = { "zph987" => "zphui5409@sina.com" }
   # Or just: spec.author    = "mac air"
   # spec.authors            = { "mac air" => "zphui5409@sina.com" }
   # spec.social_media_url   = "https://twitter.com/mac air"
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "PHModel/*.{h,m}, PHCategory/*.{h,m}"
+  spec.source_files  = "PHTool/*.{h}", "PHModel/*.{h,m}", "PHCategory/*.{h,m}"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
