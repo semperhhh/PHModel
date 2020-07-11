@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UILabel (PH)
+@interface UILabel (PHTool)
 
 /// text
 -(UILabel *(^)(NSString *text))ph_text;
@@ -22,8 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(UILabel *(^)(UIFont *font))ph_font;
 /// textAlignment
 -(UILabel *(^)(NSTextAlignment textAttachment))ph_textAlignment;
+/// attributedText
+-(UILabel *(^)(NSMutableAttributedString *attributedString))ph_attributedText;
 /// cornerRadius
 -(UILabel *(^)(CGFloat cornerRadius))ph_cornerRadius;
+/// numberOfLines
+-(UILabel *(^)(NSInteger numberOfLines))ph_numberOfLines;
 @end
 
 NS_ASSUME_NONNULL_END

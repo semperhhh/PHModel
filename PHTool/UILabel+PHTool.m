@@ -6,9 +6,9 @@
 //  Copyright © 2020 zph. All rights reserved.
 //
 
-#import "UILabel+PH.h"
+#import "UILabel+PHTool.h"
 
-@implementation UILabel (PH)
+@implementation UILabel (PHTool)
 
 -(UILabel *(^)(NSString *text))ph_text {
     UILabel *(^handle)(NSString *text) = ^(NSString *text) {
@@ -16,6 +16,13 @@
         return self;
     };
     return handle;
+}
+
+-(UILabel *(^)(NSMutableAttributedString *attributedString))ph_attributedText {
+    return ^(NSMutableAttributedString *attributedString){
+        self.attributedText = [[NSAttributedString alloc]initWithAttributedString:attributedString];
+        return self;
+    };
 }
 
 -(UILabel *(^)(UIColor *color))ph_backgroundColor {
@@ -50,6 +57,13 @@
     return ^(CGFloat cornerRadius){
         self.layer.cornerRadius = cornerRadius;
         self.layer.masksToBounds = true;
+        return self;
+    };
+}
+
+-(UILabel *(^)(NSInteger numberOfLines))ph_numberOfLines {
+    return ^(NSInteger numberOfLines){
+        self.numberOfLines = numberOfLines;
         return self;
     };
 }

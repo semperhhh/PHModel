@@ -9,8 +9,9 @@
 #ifndef PHToolHeader_h
 #define PHToolHeader_h
 
-#import "UILabel+PH.h"
-#import "UIButton+PH.h"
-#import "UIImageView+PH.h"
+#import "UILabel+PHTool.h"
+#import "UIButton+PHTool.h"
+#import "UIImageView+PHTool.h"
+#import "NSMutableAttributedString+PHTool.h"
 
 #endif /* PHToolHeader_h */

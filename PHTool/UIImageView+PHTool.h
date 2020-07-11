@@ -10,12 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImageView (PH)
+@interface UIImageView (PHTool)
 
 /// backgroundColor, need color
 -(UIImageView *(^)(UIColor *color))ph_backgroundColor;
 /// cornerRadius
 -(UIImageView *(^)(CGFloat cornerRadius))ph_cornerRadius;
+/// contentModel
+-(UIImageView *(^)(UIViewContentMode mode))ph_contentModel;
 @end
 
 NS_ASSUME_NONNULL_END

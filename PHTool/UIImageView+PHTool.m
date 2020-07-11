@@ -6,9 +6,9 @@
 //  Copyright © 2020 zph. All rights reserved.
 //
 
-#import "UIImageView+PH.h"
+#import "UIImageView+PHTool.h"
 
-@implementation UIImageView (PH)
+@implementation UIImageView (PHTool)
 
 -(UIImageView *(^)(CGFloat cornerRadius))ph_cornerRadius {
     return ^(CGFloat cornerRadius){
@@ -21,6 +21,13 @@
 -(UIImageView *(^)(UIColor *color))ph_backgroundColor {
     return ^(UIColor *color){
         self.backgroundColor = color;
+        return self;
+    };
+}
+
+-(UIImageView *(^)(UIViewContentMode mode))ph_contentModel {
+    return ^(UIViewContentMode mode){
+        self.contentMode = mode;
         return self;
     };
 }

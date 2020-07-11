@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, PHButtonImagetype) {
+    PHButtonImagetypeNormal = 0,
+    PHButtonImagetypeRight = 1,
+    PHButtonImagetypeTop = 2,
+    PHButtonImagetypeBottom = 4,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIButton (PH)
+@interface UIButton (PHTool)
 
 @property (nonatomic,copy) void (^buttonActionHandle)(void);
 
@@ -32,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIButton *(^)(UIControlEvents event, void(^handle)(void)))ph_buttonActionHandle;
 /// cornerRadius
 -(UIButton *(^)(CGFloat cornerRadius))ph_cornerRadius;
+/// buttonImageType
+- (UIButton *(^)(PHButtonImagetype type, CGFloat margin))ph_layoutWithStatus;
 @end
 
 NS_ASSUME_NONNULL_END
