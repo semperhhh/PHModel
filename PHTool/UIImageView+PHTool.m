@@ -25,7 +25,7 @@
     };
 }
 
--(UIImageView *(^)(UIViewContentMode mode))ph_contentModel {
+-(UIImageView *(^)(UIViewContentMode mode))ph_contentMode {
     return ^(UIViewContentMode mode){
         self.contentMode = mode;
         return self;

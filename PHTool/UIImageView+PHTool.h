@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// cornerRadius
 -(UIImageView *(^)(CGFloat cornerRadius))ph_cornerRadius;
 /// contentModel
--(UIImageView *(^)(UIViewContentMode mode))ph_contentModel;
+-(UIImageView *(^)(UIViewContentMode mode))ph_contentMode;
 @end
 
 NS_ASSUME_NONNULL_END
