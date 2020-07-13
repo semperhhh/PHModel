@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "PHTool"
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.6"
   spec.summary      = "iOS Category, iOS NSDictionary transfor model"
 
   # This description is used to generate tags and improve search results.
@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "zph987" => "zphui5409@sina.com" }
+  spec.author             = { "zph987" => "zphui5409@163.com" }
   # Or just: spec.author    = "mac air"
   # spec.authors            = { "mac air" => "zphui5409@sina.com" }
   # spec.social_media_url   = "https://twitter.com/mac air"
