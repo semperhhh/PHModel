@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, PHAttributedMode) {
     PHAttributedModeNormal = 0,         //默认,正常
@@ -31,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSMutableAttributedString *(^)(NSRange range, NSString * string, NSDictionary<NSAttributedStringKey, id> *dictionary))ph_addattributesWithScope;
 /// need PHAttributedMode(after,before) appoint string dictionary
 -(NSMutableAttributedString *(^)(PHAttributedMode mode, NSString *appoint, NSString * string, NSDictionary<NSAttributedStringKey, id> *dictionary))ph_addattributesWithAppoint;
+
+// MARK: attriString Size from size
+-(CGSize (^)(CGSize size))ph_attriStringSize;
 @end
 
 NS_ASSUME_NONNULL_END

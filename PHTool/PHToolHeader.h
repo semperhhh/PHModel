@@ -13,5 +13,6 @@
 #import "UIButton+PHTool.h"
 #import "UIImageView+PHTool.h"
 #import "NSMutableAttributedString+PHTool.h"
+#import "NSObject+PHModel.h"
 
 #endif /* PHToolHeader_h */

@@ -118,4 +118,18 @@
     };
 }
 
+// MARK: attriString Size from size
+-(CGSize (^)(CGSize size))ph_attriStringSize {
+    
+    return ^(CGSize size){
+        
+        if (self.length == 0 || self == nil) {
+            return CGSizeZero;
+        }
+        CGRect rect = [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+        
+        return rect.size;
+    };
+}
+
 @end

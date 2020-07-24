@@ -20,6 +20,10 @@
 }
 
 -(void)ph_modelTransWithDictionary:(NSDictionary *)dictionary {
+
+    if (![dictionary isKindOfClass:[NSDictionary class]]) {
+        return;
+    }
     
     NSObject *obj = self;
     
@@ -90,6 +94,10 @@
 }
 
 -(void)ph_modelTransWithJsonString:(NSString *)jsonString {
+    
+    if (![jsonString isKindOfClass:[NSString class]]) {
+        return;
+    }
     
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
