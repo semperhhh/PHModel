@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^TapHandle)(void);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (PHTool)
+
+@property (nonatomic,strong) TapHandle tapHandle;
 
 /// backgroundColor, need color
 -(UIImageView *(^)(UIColor *color))ph_backgroundColor;
@@ -18,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIImageView *(^)(CGFloat cornerRadius))ph_cornerRadius;
 /// contentModel
 -(UIImageView *(^)(UIViewContentMode mode))ph_contentMode;
+/// tapHandle
+-(UIImageView *(^)(TapHandle tapHandle))ph_addTapHandle;
 @end
 
 NS_ASSUME_NONNULL_END

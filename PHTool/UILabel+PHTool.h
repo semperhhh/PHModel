@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^TapHandle)(void);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UILabel (PHTool)
+
+@property (nonatomic,strong) TapHandle tapHandle;
 
 /// text
 -(UILabel *(^)(NSString *text))ph_text;
@@ -28,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(UILabel *(^)(CGFloat cornerRadius))ph_cornerRadius;
 /// numberOfLines
 -(UILabel *(^)(NSInteger numberOfLines))ph_numberOfLines;
+/// tapHandle
+-(UILabel *(^)(TapHandle tapHandle))ph_addTapHandle;
 @end
 
 NS_ASSUME_NONNULL_END

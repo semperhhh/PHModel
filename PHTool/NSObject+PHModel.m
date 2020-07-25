@@ -11,6 +11,27 @@
 
 @implementation NSObject (PHModel)
 
++(instancetype)ph_modelWithUnknowType:(id)unknow {
+    
+    NSObject *obj = [[self alloc]init];
+    [obj ph_modelTransWithUnknowType:unknow];
+    return obj;
+}
+
+-(void)ph_modelTransWithUnknowType:(id)unknow {
+    
+    NSDictionary *dictionary;
+    if ([unknow isKindOfClass:[NSDictionary class]]) {
+        dictionary = (NSDictionary *)unknow;
+    } else if ([unknow isKindOfClass:[NSString class]]) {
+        NSData *data = [(NSString *)unknow dataUsingEncoding:NSUTF8StringEncoding];
+        dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    } else if ([unknow isKindOfClass:[NSData class]]) {
+        dictionary = [NSJSONSerialization JSONObjectWithData:(NSData *)unknow options:NSJSONReadingMutableContainers error:nil];
+    }
+    [self ph_modelTransWithDictionary:dictionary];
+}
+
 +(instancetype)ph_modelWithDictionary:(NSDictionary *)dictionary {
     
     NSObject *obj = [[self alloc]init];
@@ -79,7 +100,7 @@
         }
 
         [obj setValue:idvalue forKey:key];
-        NSLog(@"property name: %@, key: %@", key, idvalue);
+//        NSLog(@"property name: %@, key: %@", key, idvalue);
     }
     
     //property transform finsh, custom something

@@ -27,6 +27,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// json转模型
 /// @param jsonString json字符串
 -(void)ph_modelTransWithJsonString:(NSString *)jsonString;
+
+/// class 未知类型转模型
+/// @param unknow 未知类型
++(instancetype)ph_modelWithUnknowType:(id)unknow;
+
+/// 未知类型转模型
+/// @param unknow 未知类型
+-(void)ph_modelTransWithUnknowType:(id)unknow;
+
 @end
 
 NS_ASSUME_NONNULL_END
