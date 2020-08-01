@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIImageView *(^)(UIViewContentMode mode))ph_contentMode;
 /// tapHandle
 -(UIImageView *(^)(TapHandle tapHandle))ph_addTapHandle;
+/// image
+-(UIImageView *(^)(UIImage *image))ph_addImage;
 @end
 
 NS_ASSUME_NONNULL_END

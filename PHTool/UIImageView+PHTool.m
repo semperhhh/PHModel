@@ -59,4 +59,12 @@ static void *tapHandlekey = @"tapHandleKey";
     }
 }
 
+-(UIImageView *(^)(UIImage *image))ph_addImage {
+    return ^(UIImage *image){
+        self.image = image;
+        return self;
+    };
+}
+
 @end
+
