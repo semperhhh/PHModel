@@ -14,7 +14,7 @@ static void *key = "key";
 @implementation UIButton (PHTool)
 
 -(void)setButtonActionHandle:(void (^)(void))buttonActionHandle {
-    objc_setAssociatedObject(self, key, buttonActionHandle, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, key, buttonActionHandle, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 -(void (^)(void))buttonActionHandle {

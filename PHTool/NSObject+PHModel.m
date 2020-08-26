@@ -131,19 +131,26 @@
     [self ph_modelTransWithDictionary:dictionary];
 }
 
+/// 映射自定义字段
 -(NSDictionary *)modelCustomPropertyMap {
     
     return @{};
 }
 
+/// 映射自定义类
 -(NSDictionary *)modelCustomPropertyClassMap {
     return @{};
 }
 
+/// 映射数组里的自定义类
+//{@"list": [customClass class]}
 -(NSDictionary *)modelCustomPropertyArrayClassMap {
     return @{};
 }
 
+
+/// 映射完成后执行的操作
+/// @param dictionary 被映射的字典
 -(void)modelTransfromFinsh:(NSDictionary *)dictionary {
     
     

@@ -23,6 +23,10 @@
 -(NSMutableAttributedString *(^)(PHAttributedMode mode, NSString * string, NSDictionary<NSAttributedStringKey, id> *dictionary))ph_addattributes {
     
     NSMutableAttributedString * (^handle)(PHAttributedMode mode, NSString *string, NSDictionary <NSAttributedStringKey, id> *dictionary) = ^(PHAttributedMode mode, NSString *string, NSDictionary <NSAttributedStringKey, id> *dictionary) {
+        
+        if (string == nil) {
+            return self;
+        };
     
         switch (mode) {
             case PHAttributedModeNormal: {
@@ -71,6 +75,10 @@
     
     return ^(NSRange range, NSString * string, NSDictionary<NSAttributedStringKey, id> *dictionary){
         
+        if (string == nil) {
+            return self;
+        }
+        
         //给定范围匹配
         NSRange scopeRange = [self.string rangeOfString:string options:NSLiteralSearch range: range];
         if (scopeRange.location <= self.string.length) {
@@ -85,6 +93,10 @@
 -(NSMutableAttributedString *(^)(PHAttributedMode mode, NSString *appoint, NSString * string, NSDictionary<NSAttributedStringKey, id> *dictionary))ph_addattributesWithAppoint {
     
     return ^(PHAttributedMode mode, NSString *appoint, NSString * string, NSDictionary<NSAttributedStringKey, id> *dictionary) {
+        
+        if (string == nil) {
+            return self;
+        }
         
         NSRange appointRange = [self.string rangeOfString:appoint];
         

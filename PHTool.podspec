@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "PHTool"
-  spec.version      = "0.0.7"
+  spec.version      = "0.0.9"
   spec.summary      = "iOS Category, iOS NSDictionary transfor model"
 
   # This description is used to generate tags and improve search results.
