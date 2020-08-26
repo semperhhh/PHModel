@@ -111,6 +111,7 @@
                         [self addAttributes:dictionary range:afterRange];
                     }
                 }
+            }
                 break;
                 
             case PHAttributedModeBeforeAppoint: {
