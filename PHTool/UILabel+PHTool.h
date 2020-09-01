@@ -16,22 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) TapHandle tapHandle;
 
-/// text
--(UILabel *(^)(NSString *text))ph_text;
-/// backgroundColor
--(UILabel *(^)(UIColor *color))ph_backgroundColor;
-/// textColor
--(UILabel *(^)(UIColor *color))ph_textColor;
-/// font
--(UILabel *(^)(UIFont *font))ph_font;
-/// textAlignment
--(UILabel *(^)(NSTextAlignment textAttachment))ph_textAlignment;
-/// attributedText
--(UILabel *(^)(NSMutableAttributedString *attributedString))ph_attributedText;
-/// cornerRadius
--(UILabel *(^)(CGFloat cornerRadius))ph_cornerRadius;
-/// numberOfLines
--(UILabel *(^)(NSInteger numberOfLines))ph_numberOfLines;
 /// tapHandle
 -(UILabel *(^)(TapHandle tapHandle))ph_addTapHandle;
 @end

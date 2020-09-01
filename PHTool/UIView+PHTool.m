@@ -21,23 +21,6 @@ static void *tapHandleKey = @"tapHandleKey";
     return objc_getAssociatedObject(self, tapHandleKey);
 }
 
-
--(UIView *(^)(UIColor *color))ph_backgroundColor {
-    return ^(UIColor *color){
-        
-        self.backgroundColor = color;
-        return self;
-    };
-}
-
--(UIView *(^)(CGFloat cornerRadius))ph_cornerRadius {
-    return ^(CGFloat cornerRadius){
-        self.layer.cornerRadius = cornerRadius;
-        self.layer.masksToBounds = true;
-        return self;
-    };
-}
-
 -(UIView *(^)(TapHandle tapHandle))ph_addTapHandle {
     return ^(TapHandle tapHandle){
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];

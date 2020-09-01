@@ -15,10 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (PHTool)
 
 @property (nonatomic,strong) TapHandle tapHandle;
-/// color
--(UIView *(^)(UIColor *color))ph_backgroundColor;
-/// cornerRadius
--(UIView *(^)(CGFloat cornerRadius))ph_cornerRadius;
+
 /// tap
 -(UIView *(^)(TapHandle tapHandle))ph_addTapHandle;
 

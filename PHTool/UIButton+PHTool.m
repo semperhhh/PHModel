@@ -21,48 +21,6 @@ static void *key = "key";
     return objc_getAssociatedObject(self, key);
 }
 
--(UIButton *(^)(NSString *text, UIControlState state))ph_text {
-    return ^(NSString *text, UIControlState state){
-        [self setTitle:text forState:state];
-        return self;
-    };
-}
-
--(UIButton *(^)(UIColor *color, UIControlState state))ph_color {
-    return ^(UIColor *color, UIControlState state){
-        [self setTitleColor:color forState:state];
-        return self;
-    };
-}
-
--(UIButton *(^)(UIFont *font))ph_font {
-    return ^(UIFont *font){
-        self.titleLabel.font = font;
-        return self;
-    };
-}
-
--(UIButton *(^)(UIColor *color))ph_backgroundColor {
-    return ^(UIColor *color){
-        self.backgroundColor = color;
-        return self;
-    };
-}
-
--(UIButton *(^)(UIImage *image, UIControlState state))ph_image {
-    return ^(UIImage *image, UIControlState state){
-        [self setImage:image forState:state];
-        return self;
-    };
-}
-
--(UIButton *(^)(UIImage *image, UIControlState state))ph_backgroundImage {
-    return ^(UIImage *image, UIControlState state){
-        [self setBackgroundImage:image forState:state];
-        return self;
-    };
-}
-
 -(UIButton *(^)(id target, SEL action, UIControlEvents event))ph_addTarge {
     return ^(id target, SEL action, UIControlEvents event){
         [self addTarget:target action:action forControlEvents:event];
@@ -82,14 +40,6 @@ static void *key = "key";
     if (self.buttonActionHandle) {
         self.buttonActionHandle();
     }
-}
-
--(UIButton *(^)(CGFloat cornerRadius))ph_cornerRadius {
-    return ^(CGFloat cornerRadius){
-        self.layer.cornerRadius = cornerRadius;
-        self.layer.masksToBounds = true;
-        return self;
-    };
 }
 
 //MARK: button文字和图标位置
