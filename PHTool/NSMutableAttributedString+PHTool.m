@@ -104,12 +104,9 @@
             case PHAttributedModeAfterAppoint: {
                 //指定字符后面的内容进行匹配
                 if (appointRange.location <= self.string.length) {
-                    NSString *appointAfterString = [self.string substringFromIndex:appointRange.location + appointRange.length];
-                    NSRange afterRange = [self.string rangeOfString:string options:NSLiteralSearch range:NSMakeRange(appointRange.location + appointRange.length, appointAfterString.length)];
-                    
-                    if (afterRange.length > 0) {
-                        [self addAttributes:dictionary range:afterRange];
-                    }
+                    NSString *appointAfterString = [self.string substringFromIndex:appointRange.location];
+                    NSRange afterRange = [self.string rangeOfString:string options:NSLiteralSearch range:NSMakeRange(appointRange.location, appointAfterString.length)];
+                    [self addAttributes:dictionary range:afterRange];
                 }
             }
                 break;
@@ -118,10 +115,10 @@
                 //指定字符前面的内容进行匹配
                 if (appointRange.location <= self.string.length) {
                     NSString *appointBeforeString = [self.string substringToIndex:appointRange.location];
+                    NSLog(@"%@", appointBeforeString);
                     NSRange beforeRange = [appointBeforeString rangeOfString:string];
-                    if (beforeRange.length > 0) {
-                        [self addAttributes:dictionary range:beforeRange];
-                    }
+                    NSLog(@"%@", NSStringFromRange(beforeRange));
+                    [self addAttributes:dictionary range:beforeRange];
                 }
             }
                 break;

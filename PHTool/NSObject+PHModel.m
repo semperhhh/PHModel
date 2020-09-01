@@ -132,22 +132,21 @@
 }
 
 /// 映射自定义字段
--(NSDictionary *)modelCustomPropertyMap {
+-(NSDictionary <NSString *, NSString *> *)modelCustomPropertyMap {
     
     return @{};
 }
 
 /// 映射自定义类
--(NSDictionary *)modelCustomPropertyClassMap {
+-(NSDictionary <NSString *, Class> *)modelCustomPropertyClassMap {
     return @{};
 }
 
 /// 映射数组里的自定义类
 //{@"list": [customClass class]}
--(NSDictionary *)modelCustomPropertyArrayClassMap {
+-(NSDictionary <NSString *, Class> *)modelCustomPropertyArrayClassMap {
     return @{};
 }
-
 
 /// 映射完成后执行的操作
 /// @param dictionary 被映射的字典

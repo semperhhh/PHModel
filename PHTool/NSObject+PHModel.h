@@ -36,6 +36,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param unknow 未知类型
 -(void)ph_modelTransWithUnknowType:(id)unknow;
 
+/// 映射自定义字段
+// @{@"custom": "str"}
+-(NSDictionary <NSString *, NSString *> *)modelCustomPropertyMap;
+
+/// 映射自定义类
+// @{@"cla": [custom class]}
+-(NSDictionary <NSString *, Class> *)modelCustomPropertyClassMap;
+
+/// 映射数组里的自定义类
+// {@"list": [customClass class]}
+-(NSDictionary <NSString *, Class> *)modelCustomPropertyArrayClassMap;
+
+/// 映射完成后执行的操作
+/// @param dictionary 被映射的字典
+-(void)modelTransfromFinsh:(NSDictionary *)dictionary;
 @end
 
 NS_ASSUME_NONNULL_END
